@@ -394,6 +394,135 @@
     });
   </script>
 
+<div class="modal fade" id="cartModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content text-dark"> <div class="modal-header">
+        <h5 class="modal-title">Sepetim</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="cartItems">
+        <p>Sepetiniz boş.</p>
+      </div>
+      <div class="modal-footer">
+        <span class="me-auto fw-bold">Toplam: <span id="cartTotal">0</span> ₺</span>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+        <button type="button" class="btn btn-success" onclick="alert('Siparişiniz alındı! (Simülasyon)')">Ödemeyi Tamamla</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 1. Sayfa Yüklendiğinde Kimin Girdiğini Kontrol Et
+  document.addEventListener("DOMContentLoaded", function() {
+    const userRole = localStorage.getItem('userRole');
+    const headerBtn = document.querySelector('.btn-getstarted'); // Headerdaki buton
+    
+    if (userRole === 'customer') {
+      // Eğer Müşteriyse: Butonu 'Sepetim' yap
+      headerBtn.innerHTML = '<i class="bi bi-cart-fill"></i> Sepetim (<span id="cartCount">0</span>)';
+      headerBtn.href = "#";
+      headerBtn.setAttribute('data-bs-toggle', 'modal');
+      headerBtn.setAttribute('data-bs-target', '#cartModal');
+      headerBtn.classList.remove('btn-getstarted');
+      headerBtn.classList.add('btn', 'btn-warning', 'ms-3');
+      
+      // Çıkış Butonu Ekle
+      const logoutBtn = document.createElement('a');
+      logoutBtn.innerHTML = 'Çıkış';
+      logoutBtn.className = 'btn btn-outline-light ms-2';
+      logoutBtn.href = '#';
+      logoutBtn.onclick = function() {
+        localStorage.removeItem('userRole');
+        localStorage.removeItem('cart');
+        window.location.href = 'giris.html';
+      };
+      headerBtn.parentNode.insertBefore(logoutBtn, headerBtn.nextSibling);
+      
+      updateCartUI(); // Sepeti güncelle
+    } else if (userRole === 'admin') {
+       // Admin ise panele git butonu koy
+       headerBtn.textContent = 'Yönetim Paneli';
+       headerBtn.href = 'admin.html';
+    } else {
+      // Giriş yapmamışsa
+      headerBtn.textContent = 'Giriş Yap';
+      headerBtn.href = 'giris.html';
+    }
+  });
+
+  // 2. Sepete Ekleme Fonksiyonu
+  function addToCart(serviceName, price) {
+    const userRole = localStorage.getItem('userRole');
+    
+    if (userRole !== 'customer') {
+      alert('Sepete eklemek için lütfen önce Müşteri olarak giriş yapın.');
+      window.location.href = 'giris.html';
+      return;
+    }
+
+    // Mevcut sepeti çek
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // Ürünü ekle
+    cart.push({ name: serviceName, price: price });
+    
+    // Geri kaydet
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    alert(serviceName + ' sepete eklendi!');
+    updateCartUI();
+  }
+
+  // 3. Sepet Görünümünü Güncelleme
+  function updateCartUI() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // Headerdaki sayıyı güncelle
+    const countSpan = document.getElementById('cartCount');
+    if(countSpan) countSpan.innerText = cart.length;
+
+    // Modal içini doldur
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    
+    if (cart.length === 0) {
+      cartItems.innerHTML = '<p>Sepetiniz boş.</p>';
+      cartTotal.innerText = '0';
+    } else {
+      let html = '<ul class="list-group">';
+      let total = 0;
+      
+      cart.forEach((item, index) => {
+        html += `<li class="list-group-item d-flex justify-content-between align-items-center">
+                  ${item.name}
+                  <span class="badge bg-primary rounded-pill">${item.price} ₺</span>
+                  <button class="btn btn-sm btn-danger ms-2" onclick="removeFromCart(${index})">X</button>
+                 </li>`;
+        total += item.price;
+      });
+      
+      html += '</ul>';
+      cartItems.innerHTML = html;
+      cartTotal.innerText = total;
+    }
+  }
+
+  // 4. Sepetten Çıkarma
+  function removeFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1); // İlgili sıradaki ürünü sil
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartUI();
+  }
+</script>
+
+
+
+
+
+
+
 </body>
 
 </html>

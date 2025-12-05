@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Yönetici Paneli | SAX AUDIO</title>
+  
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  
+  <style>
+    body { background-color: #f8f9fa; }
+    .sidebar { min-height: 100vh; background-color: #343a40; color: white; }
+    .sidebar a { color: #adb5bd; text-decoration: none; display: block; padding: 10px 20px; }
+    .sidebar a:hover, .sidebar a.active { background-color: #495057; color: white; }
+    .card-header { background-color: #e9ecef; font-weight: bold; }
+  </style>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      
+      <div class="col-md-3 col-lg-2 sidebar pt-3">
+        <h3 class="text-center mb-4">SAX ADMIN</h3>
+        <a href="#" class="active"><i class="bi bi-megaphone"></i> Duyurular</a>
+        <a href="#"><i class="bi bi-music-note-beamed"></i> Hizmet Yönetimi</a>
+        <a href="#"><i class="bi bi-envelope"></i> Gelen Mesajlar <span class="badge bg-danger ms-2">3</span></a>
+        <a href="#"><i class="bi bi-gear"></i> Ayarlar</a>
+        <hr>
+        <a href="index.html" class="text-danger"><i class="bi bi-box-arrow-left"></i> Siteye Dön</a>
+      </div>
+
+      <div class="col-md-9 col-lg-10 pt-4 px-4">
+        
+        <h2 class="mb-4">Yönetim Paneli</h2>
+
+        <div class="card shadow-sm mb-5">
+          <div class="card-header">
+            <i class="bi bi-plus-circle"></i> Yeni Duyuru / Kampanya Ekle
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Duyuru Başlığı</label>
+                <input type="text" class="form-control" placeholder="Örn: Yaz İndirimi Başladı">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Duyuru İçeriği</label>
+                <textarea class="form-control" rows="4" placeholder="Duyuru detaylarını buraya yazın..."></textarea>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">Görsel Seç (Jpg/Png)</label>
+                  <input type="file" class="form-control" accept="image/*">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">PDF Dosyası Ekle</label>
+                  <input type="file" class="form-control" accept=".pdf">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Word Belgesi Ekle</label>
+                  <input type="file" class="form-control" accept=".doc,.docx">
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-primary" onclick="alert('başarili')">
+                <i class="bi bi-save"></i> Duyuruyu Yayınla
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="card shadow-sm">
+          <div class="card-header">
+            <i class="bi bi-list-ul"></i> Yayındaki Duyurular
+          </div>
+          <div class="card-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Başlık</th>
+                  <th>Tarih</th>
+                  <th>Durum</th>
+                  <th>İşlem</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Yaz Kampanyası (%20 İndirim)</td>
+                  <td>05.12.2025</td>
+                  <td><span class="badge bg-success">Aktif</span></td>
+                  <td><button class="btn btn-sm btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Yeni Neve Masamız</td>
+                  <td>01.12.2025</td>
+                  <td><span class="badge bg-success">Aktif</span></td>
+                  <td><button class="btn btn-sm btn-danger">Sil</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

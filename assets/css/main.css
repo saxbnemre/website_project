@@ -1829,3 +1829,91 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+:root {
+  --default-font: "Poppins", sans-serif;
+  --heading-font: "Montserrat", sans-serif;
+  --nav-font: "Montserrat", sans-serif;
+  --accent-color: #c5a059;
+}
+
+.header .logo h1 {
+  letter-spacing: 1px;
+}
+
+.btn-getstarted, .btn-primary, .btn-outline-dark {
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.page-title {
+  background: #000 url("../img/page-bg.jpg") top center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.page-title:before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  inset: 0;
+}
+
+.page-title h1, .page-title p, .page-title .breadcrumbs {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.footer {
+  background-color: #111111;
+  color: #cccccc;
+  border-top: 3px solid var(--accent-color);
+}
+
+.footer .footer-top {
+  background-color: #111111;
+  border-top: none;
+}
+
+.footer h4, .footer strong {
+  color: #ffffff;
+}
+
+.footer .footer-newsletter input[type=email] {
+  background-color: #222222;
+  color: #ffffff;
+  border: 1px solid #333333;
+}
+.page-title {
+  background: url("../img/stüdyo.jpg") center center no-repeat !important;
+  background-size: cover !important;
+  padding: 140px 0 60px 0 !important;
+  position: relative;
+  background-color: #1a1a1a; 
+}
+
+.page-title:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6) !important;
+  z-index: 1;
+}
+
+.page-title .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page-title h1 {
+  color: #ffffff !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.page-title p {
+  color: #dddddd !important;
+  font-weight: 300;
+}

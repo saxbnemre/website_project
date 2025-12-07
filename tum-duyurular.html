@@ -52,14 +52,14 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Admin panelinden kaydedilenleri çek
+        
         let announcements = JSON.parse(localStorage.getItem('announcements')) || [];
         
-        // TARİHE GÖRE SIRALA (Yeniden Eskiye)
+        
         announcements.sort((a, b) => new Date(b.date) - new Date(a.date));
 
         const container = document.getElementById('archiveList');
-        container.innerHTML = ''; // "Yükleniyor" yazısını sil
+        container.innerHTML = ''; 
         
         if(announcements.length === 0) {
             container.innerHTML = '<div class="col-12 text-center"><p>Henüz yayınlanmış bir duyuru yok.</p></div>';

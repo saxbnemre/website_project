@@ -7,10 +7,9 @@
   <title>İletişim | SAX AUDIO</title>
   
   <link href="assets/img/favicon.png" rel="icon">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
@@ -62,33 +61,33 @@
     </div>
 
     <section id="contact" class="contact section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
 
-        <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
-          <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.650490016027!2d29.02165531541318!3d40.99042897930267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab867c4c11111%3A0x123456789abcdef!2sKad%C4%B1k%C3%B6y%2C%20Istanbul!5e0!3m2!1str!2str!4v1625000000000!5m2!1str!2str" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
+        <div class="mb-5">
+          <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.650490016629!2d29.02324331572456!3d40.99043967930263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab867c293672b%3A0x6b16254098485206!2sKad%C4%B1k%C3%B6y%20Bo%C4%9Fa%20Heykeli!5e0!3m2!1str!2str!4v1625050000000!5m2!1str!2str" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <div class="row gy-4">
 
           <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
+            <div class="info-item d-flex mb-4">
+              <i class="bi bi-geo-alt fs-4 me-3 text-danger"></i>
               <div>
                 <h3>Adres</h3>
                 <p>Müzik Mahallesi, Stüdyo Sokak No:1, Kadıköy</p>
               </div>
             </div>
 
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-telephone flex-shrink-0"></i>
+            <div class="info-item d-flex mb-4">
+              <i class="bi bi-telephone fs-4 me-3 text-danger"></i>
               <div>
                 <h3>Telefon</h3>
                 <p>+90 555 555 55 55</p>
               </div>
             </div>
 
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-              <i class="bi bi-envelope flex-shrink-0"></i>
+            <div class="info-item d-flex mb-4">
+              <i class="bi bi-envelope fs-4 me-3 text-danger"></i>
               <div>
                 <h3>Email</h3>
                 <p>info@saxaudio.com</p>
@@ -97,7 +96,7 @@
           </div>
 
           <div class="col-lg-8">
-            <form id="contactForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form id="contactForm" onsubmit="sendForm(event)">
               <div class="row gy-4">
                 <div class="col-md-6">
                   <input type="text" name="name" class="form-control" placeholder="Adınız Soyadınız" required>
@@ -112,7 +111,7 @@
                   <textarea class="form-control" name="message" rows="6" placeholder="Mesajınız" required></textarea>
                 </div>
                 <div class="col-md-12 text-center">
-                  <button type="submit" onclick="sendForm(event)">Mesajı Gönder</button>
+                  <button type="submit" class="btn btn-danger mt-3 px-5">Mesajı Gönder</button>
                 </div>
               </div>
             </form>
@@ -145,7 +144,8 @@
           </ul>
         </div>
         <div class="col-lg-4 col-md-12 footer-newsletter">
-            <a href="admin.html" class="text-warning">Yönetici Girişi (Demo)</a>
+          <h4>Yönetim</h4>
+          <a href="admin.html" class="text-warning">Yönetici Girişi (Demo)</a>
         </div>
       </div>
     </div>
@@ -163,21 +163,21 @@
         <div class="modal-footer">
           <span class="me-auto fw-bold">Toplam: <span id="cartTotal">0</span> ₺</span>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-          <button type="button" class="btn btn-success" onclick="alert('Siparişiniz alındı!')">Ödemeyi Tamamla</button>
+          <button type="button" class="btn btn-success" onclick="window.location.href='odeme.html'">Ödemeyi Tamamla</button>
         </div>
       </div>
     </div>
   </div>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/js/main.js"></script>
 
   <script>
     // FORM SİMÜLASYONU
     function sendForm(e) {
-      e.preventDefault(); 
-      alert("Mesajınız müşteri temsilcimize iletildi!");
+      e.preventDefault(); // BU SATIR SAYFANIN YENİLENMESİNİ ENGELLER
+      
+      alert("Mesajınız başarıyla iletildi! (Simülasyon)");
       document.getElementById("contactForm").reset(); 
     }
 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>Tüm Duyurular | SAX AUDIO</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">SAX AUDIO</h1>
+      </a>
+      <a class="btn-getstarted" href="index.html">Ana Sayfaya Dön</a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title dark-background">
+      <div class="container position-relative">
+        <h1>Duyuru Arşivi</h1>
+        <p>Stüdyomuzdan geçmişten günümüze tüm haberler ve kampanyalar.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="row" id="archiveList">
+            <div class="text-center">Yükleniyor...</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">SAX AUDIO</strong></p>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Admin panelinden kaydedilenleri çek
+        let announcements = JSON.parse(localStorage.getItem('announcements')) || [];
+        
+        // TARİHE GÖRE SIRALA (Yeniden Eskiye)
+        announcements.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        const container = document.getElementById('archiveList');
+        container.innerHTML = ''; // "Yükleniyor" yazısını sil
+        
+        if(announcements.length === 0) {
+            container.innerHTML = '<div class="col-12 text-center"><p>Henüz yayınlanmış bir duyuru yok.</p></div>';
+        } else {
+            announcements.forEach(item => {
+                let card = `
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-transparent border-0 pt-3">
+                             <span class="badge bg-danger">${item.badge}</span>
+                             <small class="text-muted float-end">${item.date}</small>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-dark">${item.title}</h5>
+                            <p class="card-text text-secondary">${item.content}</p>
+                        </div>
+                    </div>
+                </div>`;
+                container.innerHTML += card;
+            });
+        }
+    });
+  </script>
+
+</body>
+</html>

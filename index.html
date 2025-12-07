@@ -11,9 +11,9 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <link href="[https://fonts.googleapis.com](https://fonts.googleapis.com)" rel="preconnect">
-  <link href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" rel="preconnect" crossorigin>
-  <link href="[https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap](https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap)" rel="stylesheet">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -70,29 +70,29 @@
       <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
         <div class="carousel-item active">
-          <img src="assets/img/slayt1.jpg" alt="">
+          <img src="assets/img/slayt1.jpg" alt="Mix Mastering">
           <div class="carousel-container">
             <h2>Profesyonel Mix & Mastering</h2>
-            <p>Parçalarınızı radyo kalitesine getiriyoruz.</p>
-            <a href="mix-detay.html" class="btn-get-started">Paketi İncele</a>
+            <p>Parçalarınızı radyo kalitesine getiriyoruz. Analog ve dijital ekipmanlarımızla soundunuzu parlatın.</p>
+            <a href="mix.html" class="btn-get-started">Paketi İncele</a>
           </div>
         </div>
 
         <div class="carousel-item">
-          <img src="assets/img/slayt2.jpg" alt="">
+          <img src="assets/img/slayt2.jpg" alt="Beat Yapımı">
           <div class="carousel-container">
             <h2>Özel Beat & Aranje</h2>
-            <p>Sana özel üretilmiş %100 orijinal altyapılar. Tarzını yansıt.</p>
-            <a href="beat-detay.html" class="btn-get-started">Örnekleri Dinle</a>
+            <p>Sana özel üretilmiş %100 orijinal altyapılar. Tarzını yansıt, telif derdi olmadan üret.</p>
+             <a href="beat.html" class="btn-get-started">Örnekleri Dinle</a>
           </div>
         </div>
 
         <div class="carousel-item">
-          <img src="assets/img/slayt3.jpg" alt="">
+          <img src="assets/img/slayt3.jpg" alt="Prodüksiyon">
           <div class="carousel-container">
             <h2>Full Prodüksiyon</h2>
-            <p>Kayıttan yayına kadar tüm süreçte yanınızdayız.</p>
-            <a href="produksiyon-detay.html" class="btn-get-started">Bilgi Al</a>
+            <p>Kayıttan yayına kadar tüm süreçte yanınızdayız. Profesyonel destek alın.</p>
+             <a href="iletisim.html" class="btn-get-started">Bilgi Al</a>
           </div>
         </div>
 
@@ -106,7 +106,7 @@
       </div>
     </section>
 
-    <section id="duyurular" class="section">
+   <section id="duyurular" class="section">
       <div class="container">
         <div class="section-title">
           <h2>Duyurular ve Fırsatlar</h2>
@@ -114,27 +114,13 @@
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <div class="list-group">
-              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-bs-toggle="modal" data-bs-target="#duyuruModal1">
-                <span>📢 <strong>Yaz Kampanyası:</strong> Mix & Mastering Paketlerinde %20 İndirim!</span>
-                <span class="badge bg-primary rounded-pill">Detaylar</span>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-bs-toggle="modal" data-bs-target="#duyuruModal2">
-                <span>🎛️ <strong>Yeni Ekipman:</strong> Analog Neve Masamız Stüdyoya Eklendi.</span>
-                <span class="badge bg-primary rounded-pill">İncele</span>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-bs-toggle="modal" data-bs-target="#duyuruModal3">
-                <span>🎹 <strong>Beat Pazarı:</strong> Yeni Drill ve Trap Altyapılar Yayında.</span>
-                <span class="badge bg-primary rounded-pill">Dinle</span>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-bs-toggle="modal" data-bs-target="#duyuruModal4">
-                <span>📅 <strong>Bayram Tatili:</strong> Stüdyomuz bayramda kapalı olacaktır.</span>
-                <span class="badge bg-primary rounded-pill">Oku</span>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-bs-toggle="modal" data-bs-target="#duyuruModal5">
-                <span>🎤 <strong>Yarışma:</strong> Referans yarışması sonuçları açıklandı.</span>
-                <span class="badge bg-primary rounded-pill">Sonuçlar</span>
-              </a>
+            
+            <div class="list-group" id="dynamicAnnouncements">
+               <div class="text-center p-3">Yükleniyor...</div>
+            </div>
+
+            <div class="text-center mt-4">
+              <a href="tum-duyurular.html" class="btn btn-outline-dark">Daha Fazla &rarr;</a>
             </div>
           </div>
         </div>
@@ -209,6 +195,7 @@
 
       </div>
     </section>
+
     <section id="contact" class="contact section">
       <div class="container section-title" data-aos="fade-up">
         <h2>İletişim</h2>
@@ -240,7 +227,7 @@
           </div>
         </div>
 
-        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+        <form id="contactForm" class="php-email-form" data-aos="fade-up" data-aos-delay="300" onsubmit="sendForm(event)">
           <div class="row gy-4">
             <div class="col-md-6">
               <input type="text" name="name" class="form-control" placeholder="Adınız Soyadınız" required="">
@@ -354,7 +341,6 @@
   <div id="preloader"></div>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -363,22 +349,28 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <script>
+    function sendForm(e) {
+      e.preventDefault(); 
+      // Formu temizle ve mesaj ver
+      document.getElementById('contactForm').reset();
+      alert("Mesajınız müşteri temsilcimize iletildi! En kısa sürede döneceğiz.");
+    }
+  </script>
+
   <script>
     const ctx = document.getElementById('mixChart');
 
     new Chart(ctx, {
-      type: 'doughnut', // Grafik türü: Pasta (doughnut)
+      type: 'doughnut',
       data: {
         labels: ['Rap/Hip-Hop', 'Pop', 'Rock', 'Elektronik', 'Akustik'],
         datasets: [{
           label: 'Tamamlanan Projeler',
-          data: [150, 80, 45, 30, 15], // Sayısal veriler
+          data: [150, 80, 45, 30, 15],
           backgroundColor: [
-            '#FF6384', // Rap Rengi
-            '#36A2EB', // Pop Rengi
-            '#FFCE56', // Rock Rengi
-            '#4BC0C0', // Elektronik Rengi
-            '#9966FF'  // Akustik Rengi
+            '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'
           ],
           hoverOffset: 4
         }]
@@ -394,129 +386,155 @@
     });
   </script>
 
-<div class="modal fade" id="cartModal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content text-dark"> <div class="modal-header">
-        <h5 class="modal-title">Sepetim</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body" id="cartItems">
-        <p>Sepetiniz boş.</p>
-      </div>
-      <div class="modal-footer">
-        <span class="me-auto fw-bold">Toplam: <span id="cartTotal">0</span> ₺</span>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-        <button type="button" class="btn btn-success" onclick="alert('Siparişiniz alındı! (Simülasyon)')">Ödemeyi Tamamla</button>
+  <div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark"> 
+        <div class="modal-header">
+          <h5 class="modal-title">Sepetim</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="cartItems">
+          <p>Sepetiniz boş.</p>
+        </div>
+        <div class="modal-footer">
+          <span class="me-auto fw-bold">Toplam: <span id="cartTotal">0</span> ₺</span>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+          <button type="button" class="btn btn-success" onclick="window.location.href='odeme.html'">Ödemeyi Tamamla</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<script>
-  // 1. Sayfa Yüklendiğinde Kimin Girdiğini Kontrol Et
-  document.addEventListener("DOMContentLoaded", function() {
-    const userRole = localStorage.getItem('userRole');
-    const headerBtn = document.querySelector('.btn-getstarted'); // Headerdaki buton
-    
-    if (userRole === 'customer') {
-      // Eğer Müşteriyse: Butonu 'Sepetim' yap
-      headerBtn.innerHTML = '<i class="bi bi-cart-fill"></i> Sepetim (<span id="cartCount">0</span>)';
-      headerBtn.href = "#";
-      headerBtn.setAttribute('data-bs-toggle', 'modal');
-      headerBtn.setAttribute('data-bs-target', '#cartModal');
-      headerBtn.classList.remove('btn-getstarted');
-      headerBtn.classList.add('btn', 'btn-warning', 'ms-3');
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const userRole = localStorage.getItem('userRole');
+      const headerBtn = document.querySelector('.btn-getstarted');
       
-      // Çıkış Butonu Ekle
-      const logoutBtn = document.createElement('a');
-      logoutBtn.innerHTML = 'Çıkış';
-      logoutBtn.className = 'btn btn-outline-light ms-2';
-      logoutBtn.href = '#';
-      logoutBtn.onclick = function() {
-        localStorage.removeItem('userRole');
-        localStorage.removeItem('cart');
+      if (userRole === 'customer') {
+        headerBtn.innerHTML = '<i class="bi bi-cart-fill"></i> Sepetim (<span id="cartCount">0</span>)';
+        headerBtn.href = "#";
+        headerBtn.setAttribute('data-bs-toggle', 'modal');
+        headerBtn.setAttribute('data-bs-target', '#cartModal');
+        headerBtn.classList.remove('btn-getstarted');
+        headerBtn.classList.add('btn', 'btn-warning', 'ms-3');
+        
+        const logoutBtn = document.createElement('a');
+        logoutBtn.innerHTML = 'Çıkış';
+        logoutBtn.className = 'btn btn-outline-light ms-2';
+        logoutBtn.href = '#';
+        logoutBtn.onclick = function() {
+          localStorage.removeItem('userRole');
+          localStorage.removeItem('cart');
+          window.location.href = 'giris.html';
+        };
+        headerBtn.parentNode.insertBefore(logoutBtn, headerBtn.nextSibling);
+        updateCartUI();
+      } else if (userRole === 'admin') {
+         headerBtn.textContent = 'Yönetim Paneli';
+         headerBtn.href = 'admin.html';
+      } else {
+        headerBtn.textContent = 'Giriş Yap';
+        headerBtn.href = 'giris.html';
+      }
+    });
+
+    function addToCart(serviceName, price) {
+      const userRole = localStorage.getItem('userRole');
+      if (userRole !== 'customer') {
+        alert('Sepete eklemek için lütfen önce Müşteri olarak giriş yapın.');
         window.location.href = 'giris.html';
-      };
-      headerBtn.parentNode.insertBefore(logoutBtn, headerBtn.nextSibling);
-      
-      updateCartUI(); // Sepeti güncelle
-    } else if (userRole === 'admin') {
-       // Admin ise panele git butonu koy
-       headerBtn.textContent = 'Yönetim Paneli';
-       headerBtn.href = 'admin.html';
-    } else {
-      // Giriş yapmamışsa
-      headerBtn.textContent = 'Giriş Yap';
-      headerBtn.href = 'giris.html';
-    }
-  });
-
-  // 2. Sepete Ekleme Fonksiyonu
-  function addToCart(serviceName, price) {
-    const userRole = localStorage.getItem('userRole');
-    
-    if (userRole !== 'customer') {
-      alert('Sepete eklemek için lütfen önce Müşteri olarak giriş yapın.');
-      window.location.href = 'giris.html';
-      return;
+        return;
+      }
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name: serviceName, price: price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(serviceName + ' sepete eklendi!');
+      updateCartUI();
     }
 
-    // Mevcut sepeti çek
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-    // Ürünü ekle
-    cart.push({ name: serviceName, price: price });
-    
-    // Geri kaydet
-    localStorage.setItem('cart', JSON.stringify(cart));
-    
-    alert(serviceName + ' sepete eklendi!');
-    updateCartUI();
-  }
+    function updateCartUI() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const countSpan = document.getElementById('cartCount');
+      if(countSpan) countSpan.innerText = cart.length;
 
-  // 3. Sepet Görünümünü Güncelleme
-  function updateCartUI() {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-    // Headerdaki sayıyı güncelle
-    const countSpan = document.getElementById('cartCount');
-    if(countSpan) countSpan.innerText = cart.length;
-
-    // Modal içini doldur
-    const cartItems = document.getElementById('cartItems');
-    const cartTotal = document.getElementById('cartTotal');
-    
-    if (cart.length === 0) {
-      cartItems.innerHTML = '<p>Sepetiniz boş.</p>';
-      cartTotal.innerText = '0';
-    } else {
-      let html = '<ul class="list-group">';
-      let total = 0;
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
       
-      cart.forEach((item, index) => {
-        html += `<li class="list-group-item d-flex justify-content-between align-items-center">
-                  ${item.name}
-                  <span class="badge bg-primary rounded-pill">${item.price} ₺</span>
-                  <button class="btn btn-sm btn-danger ms-2" onclick="removeFromCart(${index})">X</button>
-                 </li>`;
-        total += item.price;
-      });
-      
-      html += '</ul>';
-      cartItems.innerHTML = html;
-      cartTotal.innerText = total;
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p>Sepetiniz boş.</p>';
+        cartTotal.innerText = '0';
+      } else {
+        let html = '<ul class="list-group">';
+        let total = 0;
+        cart.forEach((item, index) => {
+          html += `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${item.name}
+                    <span class="badge bg-primary rounded-pill">${item.price} ₺</span>
+                    <button class="btn btn-sm btn-danger ms-2" onclick="removeFromCart(${index})">X</button>
+                   </li>`;
+          total += item.price;
+        });
+        html += '</ul>';
+        cartItems.innerHTML = html;
+        cartTotal.innerText = total;
+      }
     }
-  }
 
-  // 4. Sepetten Çıkarma
-  function removeFromCart(index) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.splice(index, 1); // İlgili sıradaki ürünü sil
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartUI();
-  }
-</script>
+    function removeFromCart(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartUI();
+    }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const container = document.getElementById('dynamicAnnouncements');
+        if(!container) return; 
+
+        let announcements = JSON.parse(localStorage.getItem('announcements')) || [];
+        
+        if (announcements.length === 0) {
+            announcements = [
+                {id: 999, title: 'Sitemize Hoşgeldiniz!', content: 'Admin panelinden yeni duyurular ekleyebilirsiniz.', date: '2025-01-01', badge: 'Bilgi'}
+            ];
+            localStorage.setItem('announcements', JSON.stringify(announcements));
+        }
+
+        const recent = announcements.slice(0, 5);
+        container.innerHTML = '';
+        
+        recent.forEach(item => {
+            let html = `
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-bs-toggle="modal" data-bs-target="#modal${item.id}">
+              <span>📢 <strong>${item.badge}:</strong> ${item.title}</span>
+              <span class="badge bg-primary rounded-pill">Detaylar</span>
+            </a>`;
+            container.insertAdjacentHTML('beforeend', html);
+
+            if (!document.getElementById(`modal${item.id}`)) {
+              let modalHtml = `
+              <div class="modal fade" id="modal${item.id}" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content text-dark">
+                    <div class="modal-header">
+                      <h5 class="modal-title">${item.title}</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p class="text-muted small"><i class="bi bi-calendar"></i> ${item.date}</p>
+                      <hr>
+                      <p>${item.content}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>`;
+              document.body.insertAdjacentHTML('beforeend', modalHtml);
+            }
+        });
+    });
+  </script>
 
 </body>
-
 </html>

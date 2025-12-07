@@ -7,7 +7,7 @@
   <title>İletişim | SAX AUDIO</title>
   
   <link href="assets/img/favicon.png" rel="icon">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
@@ -171,17 +171,24 @@
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script>
-    // FORM SİMÜLASYONU
     function sendForm(e) {
-      e.preventDefault(); // BU SATIR SAYFANIN YENİLENMESİNİ ENGELLER
+      e.preventDefault(); 
+      document.getElementById('contactForm').reset();
       
-      alert("Mesajınız başarıyla iletildi!");
-      document.getElementById("contactForm").reset(); 
+      Swal.fire({
+        title: 'SAX AUDIO',
+        text: 'Mesajınız müşteri temsilcimize iletildi! En kısa sürede döneceğiz.',
+        icon: 'success',
+        confirmButtonText: 'Tamam',
+        confirmButtonColor: '#c5a059',
+        background: '#1a1a1a',
+        color: '#ffffff'
+      });
     }
 
-    // SEPET VE GİRİŞ SİSTEMİ
     document.addEventListener("DOMContentLoaded", function() {
       const userRole = localStorage.getItem('userRole');
       const headerBtn = document.querySelector('.btn-getstarted');
@@ -246,6 +253,6 @@
       updateCartUI();
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html>

@@ -4,10 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Mix Hizmeti | SAX AUDIO</title>
+  <title>Hakkımızda | SAX AUDIO</title>
   
   <link href="assets/img/favicon.png" rel="icon">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -24,9 +26,9 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Ana Sayfa</a></li>
-          <li class="dropdown"><a href="#" class="active"><span>Hizmetlerimiz</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#"><span>Hizmetlerimiz</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="mix.html" class="active">Mix Hizmeti</a></li>
+              <li><a href="mix.html">Mix Hizmeti</a></li>
               <li><a href="mastering.html">Mastering</a></li>
               <li><a href="beat.html">Beat / Aranje</a></li>
             </ul>
@@ -37,7 +39,7 @@
               <li><a href="referanslar.html">Referanslar</a></li>
             </ul>
           </li>
-          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="hakkimizda.html" class="active">Hakkımızda</a></li>
           <li><a href="misyon-vizyon.html">Misyon & Vizyon</a></li>
           <li><a href="iletisim.html">İletişim</a></li>
         </ul>
@@ -60,10 +62,10 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
-            <img src="assets/img/slayt1.jpg" class="img-fluid rounded shadow" alt=>
+            <img src="assets/img/slayt1.jpg" class="img-fluid rounded shadow" alt="Stüdyo Görseli">
           </div>
           <div class="col-lg-6">
-            <h3>SAX AUDIO </h3>
+            <h3>SAX AUDIO</h3>
             <p>2025 yılında Kocaeli İzmit'te butik bir stüdyo olarak kurulan SAX AUDIO, kısa sürede yüzlerce bağımsız sanatçının sound tasarımını üstlendi.</p>
             <p>Amacımız, sadece teknik bir işlem yapmak değil, sanatçının kafasındaki hayali hoparlörlere en doğru şekilde aktarmaktır.</p>
             <p>Ekibimiz, Kocaeli Üniversitesi ve SAE Institute mezunu sertifikalı ses mühendislerinden oluşmaktadır.</p>
@@ -75,7 +77,7 @@
   </main>
 
   <footer id="footer" class="footer dark-background">
-     <div class="container footer-top">
+      <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
@@ -105,9 +107,93 @@
     <div class="container copyright text-center mt-4"><p>© <span>Copyright</span> <strong class="px-1 sitename">SAX AUDIO</strong></p></div>
   </footer>
 
+  <div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title">Sepetim</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="cartItems"><p>Sepetiniz boş.</p></div>
+        <div class="modal-footer">
+          <span class="me-auto fw-bold">Toplam: <span id="cartTotal">0</span> ₺</span>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+          <button type="button" class="btn btn-success" onclick="window.location.href='odeme.html'">Ödemeyi Tamamla</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const userRole = localStorage.getItem('userRole');
+      const headerBtn = document.querySelector('.btn-getstarted');
+      
+      if (userRole === 'customer') {
+        headerBtn.innerHTML = '<i class="bi bi-cart-fill"></i> Sepetim (<span id="cartCount">0</span>)';
+        headerBtn.href = "#";
+        headerBtn.setAttribute('data-bs-toggle', 'modal');
+        headerBtn.setAttribute('data-bs-target', '#cartModal');
+        headerBtn.classList.remove('btn-getstarted');
+        headerBtn.classList.add('btn', 'btn-warning', 'ms-3');
+        
+        const logoutBtn = document.createElement('a');
+        logoutBtn.innerHTML = 'Çıkış';
+        logoutBtn.className = 'btn btn-outline-light ms-2';
+        logoutBtn.href = '#';
+        logoutBtn.onclick = function() {
+          localStorage.removeItem('userRole');
+          localStorage.removeItem('cart');
+          window.location.href = 'giris.html';
+        };
+        headerBtn.parentNode.insertBefore(logoutBtn, headerBtn.nextSibling);
+        updateCartUI();
+      } else if (userRole === 'admin') {
+         headerBtn.textContent = 'Yönetim Paneli';
+         headerBtn.href = 'admin.html';
+      }
+    });
+
+    function updateCartUI() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const countSpan = document.getElementById('cartCount');
+      if(countSpan) countSpan.innerText = cart.length;
+
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
+      
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p>Sepetiniz boş.</p>';
+        cartTotal.innerText = '0';
+      } else {
+        let html = '<ul class="list-group">';
+        let total = 0;
+        cart.forEach((item, index) => {
+          html += `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${item.name}
+                    <span class="badge bg-primary rounded-pill">${item.price} ₺</span>
+                    <button class="btn btn-sm btn-danger ms-2" onclick="removeFromCart(${index})">X</button>
+                   </li>`;
+          total += item.price;
+        });
+        html += '</ul>';
+        cartItems.innerHTML = html;
+        cartTotal.innerText = total;
+      }
+    }
+
+    function removeFromCart(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartUI();
+    }
+  </script>
+
 </body>
 </html>

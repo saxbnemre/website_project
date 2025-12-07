@@ -4,13 +4,83 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Yönetici Paneli | SAX AUDIO</title>
+  
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  
   <style>
-    body { background-color: #f8f9fa; }
-    .sidebar { min-height: 100vh; background-color: #343a40; color: white; }
-    .sidebar a { color: #adb5bd; text-decoration: none; display: block; padding: 10px 20px; }
-    .sidebar a:hover, .sidebar a.active { background-color: #495057; color: white; }
+    :root {
+        --accent-color: #c5a059;
+        --bg-body: #f8f9fa;
+        --bg-card: #ffffff;
+        --text-color: #212529;
+        --border-color: #dee2e6;
+    }
+    body { 
+        background-color: var(--bg-body); 
+        color: var(--text-color); 
+        font-family: 'Poppins', sans-serif; 
+    }
+    h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #333; }
+    .sidebar { 
+        min-height: 100vh; 
+        background-color: #ffffff; 
+        border-right: 1px solid var(--border-color); 
+        box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+    }
+    .sidebar h3 { color: #333; margin-top: 20px; letter-spacing: 1px; }
+    .sidebar a { 
+        color: #555; 
+        text-decoration: none; 
+        display: block; 
+        padding: 12px 20px; 
+        margin: 5px 10px; 
+        border-radius: 5px; 
+        transition: 0.3s; 
+        font-weight: 500;
+    }
+    .sidebar a:hover { background-color: #f1f3f5; color: var(--accent-color); }
+    .sidebar a.active { 
+        background-color: var(--accent-color); 
+        color: #fff; 
+        font-weight: 600; 
+    }
+    .card { 
+        background-color: var(--bg-card); 
+        border: 1px solid var(--border-color); 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        border-radius: 8px;
+    }
+    .card-header { 
+        background-color: #fff; 
+        border-bottom: 1px solid var(--border-color); 
+        color: #333; 
+        font-weight: 600; 
+    }
+    .form-control, .form-select { 
+        background-color: #fff; 
+        border: 1px solid #ced4da; 
+        color: #212529; 
+    }
+    .form-control:focus, .form-select:focus { 
+        background-color: #fff; 
+        border-color: var(--accent-color); 
+        color: #212529; 
+        box-shadow: 0 0 0 0.25rem rgba(197, 160, 89, 0.25); 
+    }
+    .btn-success { 
+        background-color: var(--accent-color); 
+        border: none; 
+        color: #fff; 
+        font-weight: bold; 
+    }
+    .btn-success:hover { background-color: #b08d4b; color: #fff; }
+    .table { color: #212529; }
+    .table thead th { border-bottom: 2px solid #dee2e6; color: #495057; }
+    .table tbody td { border-bottom: 1px solid #dee2e6; vertical-align: middle; }
+    .table-hover tbody tr:hover { color: #212529; background-color: #f8f9fa; }
   </style>
 </head>
 <body>
@@ -26,26 +96,26 @@
       <div class="col-md-9 col-lg-10 pt-4 px-4">
         <h2 class="mb-4">Duyuru Yönetimi</h2>
 
-        <div class="card shadow-sm mb-5">
-          <div class="card-header bg-primary text-white">
+        <div class="card mb-5">
+          <div class="card-header">
             <i class="bi bi-plus-circle"></i> Yeni Duyuru Yayınla
           </div>
           <div class="card-body">
             <form id="announcementForm">
               <div class="mb-3">
                 <label class="form-label">Duyuru Başlığı</label>
-                <input type="text" id="title" class="form-control" >
+                <input type="text" id="title" class="form-control" required>
               </div>
               <div class="mb-3">
                 <label class="form-label">İçerik Detayı</label>
                 <textarea id="content" class="form-control" rows="3" required></textarea>
               </div>
               <div class="row mb-3">
-                 <div class="col-md-6">
+                 <div class="col-md-4">
                     <label class="form-label">Tarih</label>
                     <input type="date" id="date" class="form-control" required>
                  </div>
-                 <div class="col-md-6">
+                 <div class="col-md-4">
                     <label class="form-label">Etiket (Badge)</label>
                     <select id="badge" class="form-select">
                         <option value="Kampanya">Kampanya</option>
@@ -53,13 +123,17 @@
                         <option value="Haber">Haber</option>
                     </select>
                  </div>
+                 <div class="col-md-4">
+                    <label class="form-label">Dosya/Görsel (Max 500KB)</label>
+                    <input type="file" id="fileInput" class="form-control" accept="image/*,.pdf,.doc,.docx">
+                 </div>
               </div>
               <button type="submit" class="btn btn-success"><i class="bi bi-save"></i> Yayınla</button>
             </form>
           </div>
         </div>
 
-        <div class="card shadow-sm">
+        <div class="card">
           <div class="card-header">
             <i class="bi bi-list-ul"></i> Yayındaki Duyurular
           </div>
@@ -68,6 +142,7 @@
               <thead>
                 <tr>
                   <th>Tarih</th>
+                  <th>Görsel</th>
                   <th>Başlık</th>
                   <th>Etiket</th>
                   <th>İşlem</th>
@@ -82,60 +157,127 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
-    // 1. Sayfa Yüklendiğinde Listeyi Getir
     document.addEventListener('DOMContentLoaded', loadAdminList);
 
-    // 2. Form Gönderildiğinde Kaydet
     document.getElementById('announcementForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const newAnnouncement = {
-            id: Date.now(), // Benzersiz ID
-            title: document.getElementById('title').value,
-            content: document.getElementById('content').value,
-            date: document.getElementById('date').value,
-            badge: document.getElementById('badge').value
-        };
+        const title = document.getElementById('title').value;
+        const content = document.getElementById('content').value;
+        const date = document.getElementById('date').value;
+        const badge = document.getElementById('badge').value;
+        const fileInput = document.getElementById('fileInput');
+        const file = fileInput.files[0];
 
-        // Mevcut listeyi çek, yeniyi ekle, kaydet
-        let announcements = JSON.parse(localStorage.getItem('announcements')) || [];
-        announcements.unshift(newAnnouncement); // En başa ekle
-        localStorage.setItem('announcements', JSON.stringify(announcements));
+        if (file && file.size > 500000) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Dosya Çok Büyük',
+                text: 'Lütfen 500KB altı bir dosya yükleyiniz.',
+                confirmButtonColor: '#c5a059'
+            });
+            return;
+        }
 
-        alert('Duyuru başarıyla yayınlandı!');
-        document.getElementById('announcementForm').reset();
-        loadAdminList(); // Listeyi güncelle
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const base64String = e.target.result;
+                saveAnnouncement(title, content, date, badge, base64String, file.name, file.type);
+            };
+            reader.readAsDataURL(file);
+        } else {
+            saveAnnouncement(title, content, date, badge, null, null, null);
+        }
     });
 
-    // 3. Listeyi Ekrana Basma Fonksiyonu
+    function saveAnnouncement(title, content, date, badge, fileData, fileName, fileType) {
+        const newAnnouncement = {
+            id: Date.now(),
+            title: title,
+            content: content,
+            date: date,
+            badge: badge,
+            fileData: fileData, 
+            fileName: fileName,
+            fileType: fileType
+        };
+
+        let announcements = JSON.parse(localStorage.getItem('announcements')) || [];
+        announcements.unshift(newAnnouncement);
+        
+        try {
+            localStorage.setItem('announcements', JSON.stringify(announcements));
+            Swal.fire({
+                title: 'Başarılı!',
+                text: 'Duyuru yayınlandı.',
+                icon: 'success',
+                confirmButtonColor: '#c5a059'
+            });
+            document.getElementById('announcementForm').reset();
+            loadAdminList();
+        } catch (e) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Depolama Dolu',
+                text: 'Tarayıcı hafızası doldu. Lütfen eski duyuruları silin veya daha küçük dosya yükleyin.',
+                confirmButtonColor: '#c5a059'
+            });
+        }
+    }
+
     function loadAdminList() {
         let announcements = JSON.parse(localStorage.getItem('announcements')) || [];
         const listBody = document.getElementById('adminList');
         listBody.innerHTML = '';
 
         announcements.forEach(item => {
+            let fileIcon = '-';
+            if (item.fileData) {
+                if (item.fileType.startsWith('image/')) {
+                    fileIcon = `<img src="${item.fileData}" style="height: 40px; border-radius: 4px;">`;
+                } else {
+                    fileIcon = '<i class="bi bi-file-earmark-text fs-4 text-primary"></i>';
+                }
+            }
+
             let row = `<tr>
                 <td>${item.date}</td>
+                <td>${fileIcon}</td>
                 <td>${item.title}</td>
-                <td><span class="badge bg-info">${item.badge}</span></td>
+                <td><span class="badge bg-secondary">${item.badge}</span></td>
                 <td><button class="btn btn-sm btn-danger" onclick="deleteAnnouncement(${item.id})">Sil</button></td>
             </tr>`;
             listBody.innerHTML += row;
         });
     }
 
-    // 4. Silme Fonksiyonu
     function deleteAnnouncement(id) {
-        if(confirm('Bu duyuruyu silmek istediğinize emin misiniz?')) {
-            let announcements = JSON.parse(localStorage.getItem('announcements')) || [];
-            // ID'si eşleşmeyenleri tut, eşleşeni at (Filtreleme)
-            announcements = announcements.filter(item => item.id !== id);
-            localStorage.setItem('announcements', JSON.stringify(announcements));
-            loadAdminList();
-        }
+        Swal.fire({
+            title: 'Emin misiniz?',
+            text: "Bu duyuru kalıcı olarak silinecek!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Evet, sil!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                let announcements = JSON.parse(localStorage.getItem('announcements')) || [];
+                announcements = announcements.filter(item => item.id !== id);
+                localStorage.setItem('announcements', JSON.stringify(announcements));
+                loadAdminList();
+                
+                Swal.fire({
+                    title: 'Silindi!',
+                    icon: 'success',
+                    confirmButtonColor: '#c5a059'
+                });
+            }
+        })
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

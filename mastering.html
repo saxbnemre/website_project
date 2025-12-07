@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Mix Hizmeti | SAX AUDIO</title>
+  <title>Mastering | SAX AUDIO</title>
   
   <link href="assets/img/favicon.png" rel="icon">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -26,8 +26,8 @@
           <li><a href="index.html">Ana Sayfa</a></li>
           <li class="dropdown"><a href="#" class="active"><span>Hizmetlerimiz</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="mix.html" class="active">Mix Hizmeti</a></li>
-              <li><a href="mastering.html">Mastering</a></li>
+              <li><a href="mix.html">Mix Hizmeti</a></li>
+              <li><a href="mastering.html" class="active">Mastering</a></li>
               <li><a href="beat.html">Beat / Aranje</a></li>
             </ul>
           </li>
@@ -51,8 +51,8 @@
 
    <div class="page-title dark-background">
       <div class="container position-relative">
-        <h1>Profesyonel Mastering</h1>
-        <p>Şarkınızı ticari ses seviyelerine (Loudness) taşıyor, son parıltısını veriyor ve tüm platformlarda (Spotify, Apple Music) kusursuz duyulmasını sağlıyoruz.</p>
+        <h1>Mastering Hizmeti</h1>
+        <p>Şarkınızın son dokunuşu. Radyo, Spotify ve Apple Music standartlarında ses yüksekliği ve dengesi.</p>
       </div>
     </div>
 
@@ -60,33 +60,33 @@
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-8">
-            <img src="assets/img/masa.jpeg" alt="oda" class="img-fluid services-img mb-4">
-            <h3>Mastering Nedir?</h3>
-            <p>Mix'i bitmiş bir şarkı henüz "ham" haldedir. Mastering ile şarkının ton dengesi (Tonal Balance) son kez ayarlanır, stereo genişliği artırılır ve endüstri standardı ses yüksekliğine getirilir.</p>
+            <img src="assets/img/slayt1.jpg" alt="Mastering" class="img-fluid services-img mb-4">
+            <h3>Neden Mastering?</h3>
+            <p>
+              Mix aşamasından çıkan şarkının tüm dinleme ortamlarında (Araba, Telefon, Kulaklık, Hi-Fi) aynı kalitede duyulmasını sağlarız.
+              Şarkının ses seviyesini ticari standartlara (LUFS) getiririz.
+            </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> <strong>Loudness Maximization:</strong> Sesi bozmadan yüksek seviyeye çıkarma.</li>
-              <li><i class="bi bi-check-circle"></i> <strong>Stereo Enhancement:</strong> Daha geniş ve ferah bir duyum.</li>
-              <li><i class="bi bi-check-circle"></i> <strong>Format Uyumluluğu:</strong> Wav, Mp3 ve Streaming çıkışları.</li>
+              <li><i class="bi bi-check-circle"></i> Frekans Dengeleme (EQ)</li>
+              <li><i class="bi bi-check-circle"></i> Çok Bantlı Kompresör (Multiband Compression)</li>
+              <li><i class="bi bi-check-circle"></i> Stereo Genişletme</li>
+              <li><i class="bi bi-check-circle"></i> Limiting & Dithering</li>
             </ul>
           </div>
 
           <div class="col-lg-4">
             <div class="services-list bg-light p-4 border rounded">
-              <h4>Mastering Paketleri</h4>
-              <div class="card mb-3 mt-3">
+              <h4>Hizmetlerimiz</h4>
+              <a href="mix.html">Mix Hizmeti</a>
+              <a href="mastering.html" class="active">Mastering</a>
+              <a href="beat.html">Beat / Aranje</a>
+              
+              <div class="card mt-4 border-0 shadow-sm">
                 <div class="card-body">
                   <h5 class="card-title">Stereo Mastering</h5>
-                  <p class="card-text">Tek dosya (2-Track) üzerinden işlem.</p>
-                  <h6 class="text-primary fw-bold">500 ₺</h6>
-                  <button onclick="addToCart('Stereo Mastering', 500)" class="btn btn-sm btn-outline-primary w-100 mt-2">Sepete Ekle</button>
-                </div>
-              </div>
-              <div class="card mb-3 border-primary">
-                <div class="card-body">
-                  <h5 class="card-title">Stem Mastering</h5>
-                  <p class="card-text">Grup kanallar (Drums, Bass, Vocal) ayrı işlenir.</p>
-                  <h6 class="text-primary fw-bold">1.000 ₺</h6>
-                  <button onclick="addToCart('Stem Mastering', 1000)" class="btn btn-sm btn-primary w-100 mt-2">Sepete Ekle</button>
+                  <p class="card-text">Tek şarkı için final mastering hizmeti.</p>
+                  <h6 class="text-primary fw-bold">750 ₺</h6>
+                  <button onclick="addToCart('Stereo Mastering', 750)" class="btn btn-primary w-100 mt-2">Sepete Ekle</button>
                 </div>
               </div>
             </div>
@@ -98,7 +98,7 @@
   </main>
 
   <footer id="footer" class="footer dark-background">
-     <div class="container footer-top">
+      <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
@@ -128,9 +128,126 @@
     <div class="container copyright text-center mt-4"><p>© <span>Copyright</span> <strong class="px-1 sitename">SAX AUDIO</strong></p></div>
   </footer>
 
+  <div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title">Sepetim</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="cartItems"><p>Sepetiniz boş.</p></div>
+        <div class="modal-footer">
+          <span class="me-auto fw-bold">Toplam: <span id="cartTotal">0</span> ₺</span>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+          <button type="button" class="btn btn-success" onclick="window.location.href='odeme.html'">Ödemeyi Tamamla</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const userRole = localStorage.getItem('userRole');
+      const headerBtn = document.querySelector('.btn-getstarted');
+      
+      if (userRole === 'customer') {
+        headerBtn.innerHTML = '<i class="bi bi-cart-fill"></i> Sepetim (<span id="cartCount">0</span>)';
+        headerBtn.href = "#";
+        headerBtn.setAttribute('data-bs-toggle', 'modal');
+        headerBtn.setAttribute('data-bs-target', '#cartModal');
+        headerBtn.classList.remove('btn-getstarted');
+        headerBtn.classList.add('btn', 'btn-warning', 'ms-3');
+        
+        const logoutBtn = document.createElement('a');
+        logoutBtn.innerHTML = 'Çıkış';
+        logoutBtn.className = 'btn btn-outline-light ms-2';
+        logoutBtn.href = '#';
+        logoutBtn.onclick = function() {
+          localStorage.removeItem('userRole');
+          localStorage.removeItem('cart');
+          window.location.href = 'giris.html';
+        };
+        headerBtn.parentNode.insertBefore(logoutBtn, headerBtn.nextSibling);
+        updateCartUI();
+      } else if (userRole === 'admin') {
+         headerBtn.textContent = 'Yönetim Paneli';
+         headerBtn.href = 'admin.html';
+      }
+    });
+
+    function addToCart(serviceName, price) {
+        const userRole = localStorage.getItem('userRole');
+        
+        if (userRole !== 'customer') {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Giriş Yapmalısınız',
+                text: 'Sepete eklemek için lütfen önce Müşteri olarak giriş yapın.',
+                confirmButtonColor: '#c5a059',
+                background: '#1a1a1a',
+                color: '#fff'
+            }).then(() => {
+                window.location.href = 'giris.html';
+            });
+            return;
+        }
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ name: serviceName, price: price });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        Swal.fire({
+            icon: 'success',
+            title: serviceName + ' Sepete Eklendi',
+            showConfirmButton: false,
+            timer: 1500,
+            background: '#1a1a1a',
+            color: '#fff',
+            iconColor: '#c5a059'
+        });
+        updateCartUI();
+    }
+
+    function updateCartUI() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const countSpan = document.getElementById('cartCount');
+      if(countSpan) countSpan.innerText = cart.length;
+
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
+      
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p>Sepetiniz boş.</p>';
+        cartTotal.innerText = '0';
+      } else {
+        let html = '<ul class="list-group">';
+        let total = 0;
+        cart.forEach((item, index) => {
+          html += `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${item.name}
+                    <span class="badge bg-primary rounded-pill">${item.price} ₺</span>
+                    <button class="btn btn-sm btn-danger ms-2" onclick="removeFromCart(${index})">X</button>
+                   </li>`;
+          total += item.price;
+        });
+        html += '</ul>';
+        cartItems.innerHTML = html;
+        cartTotal.innerText = total;
+      }
+    }
+
+    function removeFromCart(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartUI();
+    }
+  </script>
+
 </body>
 </html>

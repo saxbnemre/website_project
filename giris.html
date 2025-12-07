@@ -5,72 +5,138 @@
   <title>Giriş Yap | SAX AUDIO</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
   
   <style>
-    body { background: #545252; color: white; display: flex; align-items: center; justify-content: center; height: 100vh; }
-    .login-card { background: #2c2c2c; padding: 40px; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5); width: 100%; max-width: 400px; }
-    .form-control { background: #444; border: none; color: white; }
-    .form-control:focus { background: #555; color: white; box-shadow: none; }
-    .btn-login { background: #d9232d; color: white; width: 100%; font-weight: bold; }
-    .btn-login:hover { background: #b01a23; color: white; }
+    body { 
+        background: #0f0f0f; 
+        color: #e0e0e0; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        height: 100vh; 
+        font-family: 'Poppins', sans-serif;
+    }
+    .login-card { 
+        background: #1a1a1a; 
+        padding: 40px; 
+        border-radius: 15px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+        width: 100%; 
+        max-width: 400px; 
+        border: 1px solid #333;
+    }
+    h2 { font-family: 'Montserrat', sans-serif; color: #c5a059; }
+    .form-control { 
+        background: #222; 
+        border: 1px solid #333; 
+        color: white; 
+        padding: 10px;
+    }
+    .form-control:focus { 
+        background: #222; 
+        color: white; 
+        border-color: #c5a059;
+        box-shadow: none; 
+    }
+    .btn-login { 
+        background: #c5a059; 
+        color: #000; 
+        width: 100%; 
+        font-weight: bold; 
+        border-radius: 50px; 
+        padding: 10px;
+        border: none;
+        transition: 0.3s;
+    }
+    .btn-login:hover { 
+        background: #e0b663; 
+        color: #000; 
+        transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
 
   <div class="login-card">
     <div class="text-center mb-4">
-      <h2 class="fw-bold text-white">SAX AUDIO</h2>
-      <p class="text-white-50">Hesabınıza Giriş Yapın</p>
+      <h2 class="fw-bold">SAX AUDIO</h2>
+      <p class="text-secondary">Hesabınıza Giriş Yapın</p>
     </div>
 
     <form id="loginForm">
       <div class="mb-3">
-        <label>Kullanıcı Adı</label>
+        <label class="form-label grey small">Kullanıcı Adı</label>
         <input type="text" id="username" class="form-control" required>
       </div>
-      <div class="mb-3">
-        <label>Şifre</label>
+      <div class="mb-4">
+        <label class="form-label grey small">Şifre</label>
         <input type="password" id="password" class="form-control" required>
       </div>
-      <button type="submit" class="btn btn-login py-2">Giriş Yap</button>
+      <button type="submit" class="btn btn-login">Giriş Yap</button>
     </form>
     
-    <div class="mt-3 text-center">
-      <small class="text-white">
-        Admin Girişi: <b>admin</b> / 1234<br>
-        Müşteri Girişi: <b>musteri</b> / 1234
+    <div class="mt-4 text-center">
+      <small class="grey">
+        Admin: <b>admin</b> / 1234<br>
+        Müşteri: <b>musteri</b> / 1234
       </small>
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     document.getElementById('loginForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // Sayfanın yenilenmesini engelle
+      e.preventDefault();
 
       const user = document.getElementById('username').value;
       const pass = document.getElementById('password').value;
 
-      // 1. SENARYO: ADMİN GİRİŞİ
       if (user === 'admin' && pass === '1234') {
-        alert('Yönetici girişi başarılı! Panele yönlendiriliyorsunuz...');
-        localStorage.setItem('userRole', 'admin'); // Tarayıcıya admin olduğunu kaydet
-        window.location.href = 'admin.html'; // Admin paneline git
+        Swal.fire({
+            icon: 'success',
+            title: 'Yönetici Girişi',
+            text: 'Panele yönlendiriliyorsunuz...',
+            timer: 1500,
+            showConfirmButton: false,
+            background: '#1a1a1a',
+            color: '#fff',
+            iconColor: '#c5a059'
+        }).then(() => {
+            localStorage.setItem('userRole', 'admin');
+            window.location.href = 'admin.html';
+        });
       } 
-      // 2. SENARYO: MÜŞTERİ GİRİŞİ
       else if (user === 'musteri' && pass === '1234') {
-        alert('Hoş geldiniz! Alışverişe başlayabilirsiniz.');
-        localStorage.setItem('userRole', 'customer'); // Tarayıcıya müşteri olduğunu kaydet
-        localStorage.setItem('cart', JSON.stringify([])); // Boş sepet oluştur
-        window.location.href = 'index.html'; // Ana sayfaya git
+        Swal.fire({
+            icon: 'success',
+            title: 'Hoş Geldiniz',
+            text: 'Alışverişe başlayabilirsiniz.',
+            timer: 1500,
+            showConfirmButton: false,
+            background: '#1a1a1a',
+            color: '#fff',
+            iconColor: '#c5a059'
+        }).then(() => {
+            localStorage.setItem('userRole', 'customer');
+            localStorage.setItem('cart', JSON.stringify([]));
+            window.location.href = 'index.html';
+        });
       } 
-      // HATALI GİRİŞ
       else {
-        alert('Hatalı kullanıcı adı veya şifre!');
+        Swal.fire({
+            icon: 'error',
+            title: 'Hata',
+            text: 'Kullanıcı adı veya şifre yanlış!',
+            confirmButtonColor: '#c5a059',
+            background: '#1a1a1a',
+            color: '#fff'
+        });
       }
     });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

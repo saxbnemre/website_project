@@ -4,60 +4,88 @@
   <meta charset="utf-8">
   <title>Güvenli Ödeme | SAX AUDIO</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
+  
   <style>
-    body { background: #f8f9fa; padding-top: 50px; }
-    .payment-card { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    body { background: #f0f2f5; font-family: 'Poppins', sans-serif; display: flex; align-items: center; min-height: 100vh; }
+    .payment-card { 
+      max-width: 500px; 
+      margin: auto; 
+      background: white; 
+      padding: 40px; 
+      border-radius: 20px; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+    }
+    h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #333; }
+    .form-control { background: #f9f9f9; border: 1px solid #eee; padding: 12px; border-radius: 10px; }
+    .btn-success { background: #c5a059; border: none; padding: 12px; border-radius: 50px; font-weight: 600; width: 100%; transition: 0.3s; }
+    .btn-success:hover { background: #e0b663; transform: translateY(-2px); }
+    .btn-secondary { border-radius: 50px; width: 100%; padding: 12px; }
   </style>
 </head>
 <body>
 
   <div class="container">
     <div class="payment-card">
-      <h3 class="text-center mb-4">Ödeme Bilgileri (Simülasyon)</h3>
-      <div class="alert alert-warning">
-        <small>Bu bir okul projesidir. Gerçek kredi kartı bilgilerinizi girmeyiniz!</small>
+      <h3 class="text-center mb-4">Ödeme Bilgileri</h3>
+      
+      <div class="alert alert-warning text-center small">
+        <i class="bi bi-info-circle"></i> 
       </div>
       
-      <form onsubmit="completeOrder(event)">
+      <form>
         <div class="mb-3">
-            <label>Kart Üzerindeki İsim</label>
-            <input type="text" class="form-control" required placeholder="Ad Soyad">
+            <label class="form-label text-muted small">Kart Üzerindeki İsim</label>
+            <input type="text" class="form-control" placeholder="Ad Soyad">
         </div>
         <div class="mb-3">
-            <label>Kart Numarası</label>
-            <input type="text" class="form-control" required placeholder="0000 0000 0000 0000">
+            <label class="form-label text-muted small">Kart Numarası</label>
+            <input type="text" class="form-control" placeholder="0000 0000 0000 0000">
         </div>
-        <div class="row">
-            <div class="col-6 mb-3">
-                <label>Son Kullanma</label>
-                <input type="text" class="form-control" required placeholder="AA/YY">
+        <div class="row mb-4">
+            <div class="col-6">
+                <label class="form-label text-muted small">Son Kullanma</label>
+                <input type="text" class="form-control" placeholder="AA/YY">
             </div>
-            <div class="col-6 mb-3">
-                <label>CVV</label>
-                <input type="text" class="form-control" required placeholder="123">
+            <div class="col-6">
+                <label class="form-label text-muted small">CVV</label>
+                <input type="text" class="form-control" placeholder="123">
             </div>
         </div>
-        <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-success btn-lg">Ödemeyi Onayla</button>
-            <a href="index.html" class="btn btn-outline-secondary">İptal</a>
+        
+        <div class="row g-2">
+            <div class="col-12">
+                <button type="button" class="btn btn-success" onclick="completeOrder()">Ödemeyi Onayla</button>
+            </div>
+            <div class="col-12">
+                <a href="index.html" class="btn btn-secondary">İptal Et</a>
+            </div>
         </div>
       </form>
     </div>
   </div>
 
   <script>
-    function completeOrder(e) {
-        e.preventDefault();
-        // 1. Ödeme Başarılı Mesajı
-        alert("Tebrikler! Ödemeniz başarıyla alındı. Siparişiniz hazırlanıyor.");
+    function completeOrder() {
         
-        // 2. Sepeti Boşalt (Alışveriş bitti)
-        localStorage.setItem('cart', JSON.stringify([]));
-        
-        // 3. Ana Sayfaya Gönder
-        window.location.href = 'index.html';
+        const btn = document.querySelector('.btn-success');
+        btn.innerHTML = 'İşleniyor...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+            
+            alert("✅ Ödemeniz başarıyla alındı. Ana sayfaya yönlendiriliyorsunuz.");
+            
+            
+            localStorage.setItem('cart', JSON.stringify([]));
+            
+            
+            window.location.href = 'index.html';
+        }, 1000); 
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

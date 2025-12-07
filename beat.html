@@ -49,27 +49,27 @@
 
   <main class="main">
 
-   <div class="page-title dark-background">
+   <div class="page-title dark-background" data-aos="fade">
       <div class="container position-relative">
-        <h1>Beat & Aranje Hizmetleri</h1>
-        <p>Hayalinizdeki şarkı için %100 özgün, telif sorunu olmayan profesyonel altyapılar üretiyoruz.</p>
+        <h1 data-aos="fade-down" data-aos-delay="100">Beat & Aranje Hizmetleri</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Hayalinizdeki şarkı için %100 özgün, telif sorunu olmayan profesyonel altyapılar üretiyoruz.</p>
       </div>
     </div>
 
     <section id="service-details" class="service-details section">
       <div class="container">
         <div class="row gy-4">
-          <div class="col-lg-8">
-            <img src="assets/img/dima-winterson-Hk9OpREo6U4-unsplash.jpg" alt="Beat Yapımı" class="img-fluid services-img mb-4">
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/dima-winterson-Hk9OpREo6U4-unsplash.jpg" alt="Beat Yapımı" class="img-fluid services-img mb-4" data-aos="zoom-in" data-aos-delay="200">
             <h3>Tarzını Yansıt</h3>
             <p>Trap, Drill, R&B, Pop veya Rock... Hangi tarzda olursa olsun, vokalinize en uygun trafiği ve melodiyi kurguluyoruz.</p>
             <p>Hazır "Type Beat"lerin aksine, sanatçının karakterine özel "Custom Production" yapıyoruz.</p>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-4" data-aos="fade-left" data-aos-delay="300">
             <div class="services-list bg-light p-4 border rounded">
               <h4>Beat Paketleri</h4>
-              <div class="card mb-3 mt-3">
+              <div class="card mb-3 mt-3" data-aos="flip-left" data-aos-delay="400">
                 <div class="card-body">
                   <h5 class="card-title">Leasing (Kiralama)</h5>
                   <p class="card-text">MP3 formatında teslim, sınırlı kullanım.</p>
@@ -77,7 +77,7 @@
                   <button onclick="addToCart('Beat Leasing', 300)" class="btn btn-sm btn-outline-primary w-100 mt-2">Sepete Ekle</button>
                 </div>
               </div>
-              <div class="card mb-3 border-primary">
+              <div class="card mb-3 border-primary" data-aos="flip-left" data-aos-delay="500">
                 <div class="card-body">
                   <h5 class="card-title">Exclusive (Özel Haklar)</h5>
                   <p class="card-text">Tüm haklar sizin olur. Track-out (kanal kanal) teslim.</p>
@@ -145,6 +145,10 @@
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    AOS.init();
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {

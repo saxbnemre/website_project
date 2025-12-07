@@ -49,39 +49,39 @@
 
   <main class="main">
 
-   <div class="page-title dark-background">
+   <div class="page-title dark-background" data-aos="fade">
       <div class="container position-relative">
-        <h1>Mastering Hizmeti</h1>
-        <p>Şarkınızın son dokunuşu. Radyo, Spotify ve Apple Music standartlarında ses yüksekliği ve dengesi.</p>
+        <h1 data-aos="fade-down" data-aos-delay="100">Mastering Hizmeti</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Şarkınızın son dokunuşu. Radyo, Spotify ve Apple Music standartlarında ses yüksekliği ve dengesi.</p>
       </div>
     </div>
 
     <section id="service-details" class="service-details section">
       <div class="container">
         <div class="row gy-4">
-          <div class="col-lg-8">
-            <img src="assets/img/slayt1.jpg" alt="Mastering" class="img-fluid services-img mb-4">
+          <div class="col-lg-8" data-aos="fade-right">
+            <img src="assets/img/slayt1.jpg" alt="Mastering" class="img-fluid services-img mb-4" data-aos="zoom-in" data-aos-delay="300">
             <h3>Neden Mastering?</h3>
             <p>
               Mix aşamasından çıkan şarkının tüm dinleme ortamlarında (Araba, Telefon, Kulaklık, Hi-Fi) aynı kalitede duyulmasını sağlarız.
               Şarkının ses seviyesini ticari standartlara (LUFS) getiririz.
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> Frekans Dengeleme (EQ)</li>
-              <li><i class="bi bi-check-circle"></i> Çok Bantlı Kompresör (Multiband Compression)</li>
-              <li><i class="bi bi-check-circle"></i> Stereo Genişletme</li>
-              <li><i class="bi bi-check-circle"></i> Limiting & Dithering</li>
+              <li data-aos="fade-up" data-aos-delay="400"><i class="bi bi-check-circle"></i> Frekans Dengeleme (EQ)</li>
+              <li data-aos="fade-up" data-aos-delay="500"><i class="bi bi-check-circle"></i> Çok Bantlı Kompresör (Multiband Compression)</li>
+              <li data-aos="fade-up" data-aos-delay="600"><i class="bi bi-check-circle"></i> Stereo Genişletme</li>
+              <li data-aos="fade-up" data-aos-delay="700"><i class="bi bi-check-circle"></i> Limiting & Dithering</li>
             </ul>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-4" data-aos="fade-left">
             <div class="services-list bg-light p-4 border rounded">
               <h4>Hizmetlerimiz</h4>
               <a href="mix.html">Mix Hizmeti</a>
               <a href="mastering.html" class="active">Mastering</a>
               <a href="beat.html">Beat / Aranje</a>
               
-              <div class="card mt-4 border-0 shadow-sm">
+              <div class="card mt-4 border-0 shadow-sm" data-aos="flip-left" data-aos-delay="800">
                 <div class="card-body">
                   <h5 class="card-title">Stereo Mastering</h5>
                   <p class="card-text">Tek şarkı için final mastering hizmeti.</p>
@@ -149,6 +149,10 @@
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    AOS.init();
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {

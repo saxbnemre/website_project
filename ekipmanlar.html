@@ -24,7 +24,6 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Ana Sayfa</a></li>
-          
           <li class="dropdown"><a href="#"><span>Hizmetlerimiz</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="mix.html">Mix Hizmeti</a></li>
@@ -32,37 +31,35 @@
               <li><a href="beat.html">Beat / Aranje</a></li>
             </ul>
           </li>
-
           <li class="dropdown"><a href="#" class="active"><span>Stüdyo</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="ekipmanlar.html" class="active">Ekipmanlar</a></li>
               <li><a href="referanslar.html">Referanslar</a></li>
             </ul>
           </li>
-
           <li><a href="hakkimizda.html">Hakkımızda</a></li>
           <li><a href="misyon-vizyon.html">Misyon & Vizyon</a></li>
           <li><a href="iletisim.html">İletişim</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a class="btn-getstarted" href="giris.html">Giriş Yap</a>
+      <a class="btn-getstarted" href="iletisim.html">Teklif Al</a>
     </div>
   </header>
 
   <main class="main">
 
-   <div class="page-title dark-background">
+   <div class="page-title dark-background" data-aos="fade">
       <div class="container position-relative">
-        <h1>Stüdyo Ekipmanlarımız</h1>
-        <p>Sıcak analog tonları modern dijital teknolojiyle birleştiriyoruz. İşte mutfağımızdaki araçlar.</p>
+        <h1 data-aos="fade-down" data-aos-delay="100">Stüdyo Ekipmanlarımız</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Sıcak analog tonları modern dijital teknolojiyle birleştiriyoruz. İşte mutfağımızdaki araçlar.</p>
       </div>
     </div>
 
     <section class="section">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 mb-4">
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
             <div class="card h-100 p-4">
               <h3 class="border-bottom pb-2 text-primary">Ses Kartları & Dönüştürücüler</h3>
               <ul class="list-group list-group-flush mt-3">
@@ -72,7 +69,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-6 mb-4">
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
             <div class="card h-100 p-4">
               <h3 class="border-bottom pb-2 text-primary">Analog Donanımlar</h3>
               <ul class="list-group list-group-flush mt-3">
@@ -82,7 +79,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-6 mb-4">
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
             <div class="card h-100 p-4">
               <h3 class="border-bottom pb-2 text-primary">Mikrofonlar</h3>
               <ul class="list-group list-group-flush mt-3">
@@ -93,7 +90,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-6 mb-4">
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
             <div class="card h-100 p-4">
               <h3 class="border-bottom pb-2 text-primary">Dinleme (Monitoring)</h3>
               <ul class="list-group list-group-flush mt-3">
@@ -161,6 +158,10 @@
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    AOS.init();
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {

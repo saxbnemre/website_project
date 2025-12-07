@@ -8,6 +8,7 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
   
   <style>
@@ -61,34 +62,38 @@
 </head>
 <body>
 
-  <div class="login-card">
+  <div class="login-card" data-aos="zoom-in" data-aos-duration="1000">
     <div class="text-center mb-4">
       <h2 class="fw-bold">SAX AUDIO</h2>
       <p class="text-secondary">Hesabınıza Giriş Yapın</p>
     </div>
 
     <form id="loginForm">
-      <div class="mb-3">
-        <label class="form-label grey small">Kullanıcı Adı</label>
+      <div class="mb-3" data-aos="fade-up" data-aos-delay="100">
+        <label class="form-label text-muted small">Kullanıcı Adı</label>
         <input type="text" id="username" class="form-control" required>
       </div>
-      <div class="mb-4">
-        <label class="form-label grey small">Şifre</label>
+      <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+        <label class="form-label text-muted small">Şifre</label>
         <input type="password" id="password" class="form-control" required>
       </div>
-      <button type="submit" class="btn btn-login">Giriş Yap</button>
+      <button type="submit" class="btn btn-login" data-aos="fade-up" data-aos-delay="300">Giriş Yap</button>
     </form>
     
-    <div class="mt-4 text-center">
-      <small class="grey">
+    <div class="mt-4 text-center" data-aos="fade-in" data-aos-delay="500">
+      <small class="text-muted">
         Admin: <b>admin</b> / 1234<br>
         Müşteri: <b>musteri</b> / 1234
       </small>
     </div>
   </div>
 
+  <script src="assets/vendor/aos/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
   <script>
+    AOS.init();
+
     document.getElementById('loginForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
